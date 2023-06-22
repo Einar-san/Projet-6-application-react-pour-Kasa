@@ -1,0 +1,29 @@
+
+/*--------------HEADER--------------*/
+
+
+.header-content {
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+
+  /*-------Menu links-------*/
+  nav {
+    width: 40%;
+    max-width: 300px;
+    display: flex;
+    justify-content: space-between;
+  }
+  a {
+    font-weight: 500;
+    color: #FF6060;
+    font-size: 12px;
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+  a.active{
+    text-decoration: underline;
+  }
+}

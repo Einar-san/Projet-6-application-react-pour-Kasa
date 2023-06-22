@@ -6,8 +6,13 @@ export default function FilterTag ({article}) {
         )
     )
     return (
-        <div className={"tags"}>
-            {tags}
+        <div className={"info"}>
+            <h1>{article.title}</h1>
+            <h2>{article.location}</h2>
+            <div className={"tags"}>
+                {tags}
+            </div>
         </div>
+
     )
 }

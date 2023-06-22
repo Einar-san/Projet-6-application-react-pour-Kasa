@@ -1,0 +1,29 @@
+/*------------ERROR PAGE--------------*/
+
+.error-page {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  padding: 60px 60px 160px 60px;
+
+
+  h1 {
+    font-size: 90px;
+    color: #FF6060;
+    margin: 0;
+    padding: 0;
+    margin-bottom: 100px;
+  }
+  p {
+    font-size: 20px;
+    color: #FF6060;
+    text-align: center;
+    margin-bottom: 100px;
+  }
+  a {
+    font-size: 20px;
+    color: #FF6060;
+    text-decoration: underline;
+    text-align: center;
+  }
+}

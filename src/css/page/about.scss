@@ -1,0 +1,42 @@
+/*--------------ABOUT PAGE--------------*/
+
+.about-container {
+
+  padding: 20px;
+
+  .banner {
+    position: relative;
+    width: 100%;
+    height: 220px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border-radius: 10px;
+
+    img {
+      width: 100%;
+    }
+
+    .banner-description {
+      display: flex;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(10, 10, 10, 0.5);
+      font-size: 24px;
+      font-weight: 500;
+      position: absolute;
+      color: white;
+      justify-content: center;
+      flex-flow: column nowrap;
+      padding-left: 15px;
+
+      p {
+        display: inline-block;
+        letter-spacing: 1px;
+        margin: 0;
+        padding: 0;
+      }
+    }
+  }
+}

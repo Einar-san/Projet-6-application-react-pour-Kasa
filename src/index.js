@@ -1,9 +1,7 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
 import { createRoot } from 'react-dom/client';
-import './style.css';
-import { BrowserRouter as Router, useLocation } from 'react-router-dom';
-import { createBrowserRouter, BrowserRouter, RouterProvider } from "react-router-dom";
+import './css/style.css';
+import { BrowserRouter as Router, createBrowserRouter, RouterProvider } from "react-router-dom";
 import Home from "./containers/home/home";
 import About from "./containers/about/about";
 import Article from "./containers/article/article";
@@ -46,6 +44,10 @@ const router = createBrowserRouter([
     {
         path: "/articles/:id",
         element: <Article />,
+    },
+    {
+        path: "/error",
+        element: <Err404 />,
     },
 
 ]);

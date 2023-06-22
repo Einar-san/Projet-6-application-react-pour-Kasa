@@ -15,14 +15,19 @@ export default function UserScore ({article}) {
     }
     // Stars elements
     const ratingStars = generateRatingStars(article.rating);
-
+    const userName = article.host.name
+    const spaceIndex = article.host.name.indexOf(' ');
+    const firstPart = article.host.name.slice(0, spaceIndex);
+    const secondPart = article.host.name.slice(spaceIndex + 1);
     return (
         <div className={"user-score"}>
             <div className={"score"}>
                 {ratingStars}
             </div>
             <div className={"host"}>
-                <h3>{article.host.name}</h3>
+                <h3>{firstPart}
+                    <br/>
+                    {secondPart}</h3>
                 <img src={article.host.picture} alt={article.host.name}/>
             </div>
         </div>
