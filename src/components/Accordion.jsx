@@ -4,8 +4,9 @@ export default function Accordion(props) {
     const contentRef = useRef(null);
     const { title, content} = props
     function toggleAccordion(event) {
-        const accordion = event.target;
-        const content = contentRef.current;
+        const accordion = event.currentTarget; //Always refer to the button
+        const content = contentRef.current;    // Panel element (Accordion content)
+
 
         accordion.classList.toggle('open');
         content.style.maxHeight = accordion.classList.contains('open') ? content.scrollHeight + 'px' : '0';

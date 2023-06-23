@@ -8,21 +8,24 @@
 
 
   h1 {
-    font-size: 90px;
-    color: #FF6060;
+    font-size: $error-text-size;
+    color: $error-text-color;
+    font-weight: $error-text-weight;
     margin: 0;
     padding: 0;
     margin-bottom: 100px;
   }
   p {
-    font-size: 20px;
-    color: #FF6060;
+    font-size: $error-description-text-size;
+    color: $error-description-text-color;
+    font-weight: $error-description-text-weight;
     text-align: center;
     margin-bottom: 100px;
   }
   a {
-    font-size: 20px;
-    color: #FF6060;
+    font-size: $error-link-text-size;
+    color: $error-link-text-color;
+    font-weight: $error-link-text-weight;
     text-decoration: underline;
     text-align: center;
   }

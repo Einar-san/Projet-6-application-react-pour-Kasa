@@ -6,9 +6,10 @@
   height: 35px;
   padding: 0 10px 0 10px;
   background-color: #FF6060;
-  color: white;
+  color: $accordion-btn-text-color;
   cursor: pointer;
-  font-size: 16px;
+  font-size: $accordion-btn-text-size;
+  font-weight: $accordion-btn-text-weight;
   text-align: left;
   border: none;
   outline: none;
@@ -34,11 +35,13 @@
   background-color: #F6F6F6;
   padding: 0;
   border-radius: 5px;
-  font-size: 14px;
-  color: #FF6060;
-  overflow: hidden;
+  font-size: $accordion-text-size;
+  color: $accordion-text-color;
+  font-weight: $accordion-text-weight;
+
   p {
     padding: 20px;
+    margin: 0;
   }
 }
 

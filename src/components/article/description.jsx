@@ -4,7 +4,7 @@ export default function Description({article}) {
     const contentRef = useRef(null);
 
     function toggleAccordion(event) {
-        const accordion = event.target;
+        const accordion = event.currentTarget; //Always refer to the button
         const content = contentRef.current;
 
         accordion.classList.toggle('open');

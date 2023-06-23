@@ -1,13 +1,12 @@
-import {useEffect, useState} from "react";
+import React, { useEffect, useState } from "react";
 
-export default function CoverArticle ({article}) {
+export default function CoverArticle({ article }) {
     return (
         <div className={"cover-article"}>
-            <Carousel images={article.pictures}/>
+            <Carousel images={article.pictures} />
         </div>
-    )
+    );
 }
-
 
 const Carousel = ({ images }) => {
     const [currentIndex, setCurrentIndex] = useState(0);
@@ -31,22 +30,31 @@ const Carousel = ({ images }) => {
         return () => clearTimeout(imageTimer);
     }, [currentIndex]);
 
+    const indicatorText = `${currentIndex + 1}/${images.length}`;
+
     return (
         <div className="carousel">
             <button className="left-carousel-btn" onClick={goToPreviousSlide}>
-                <img src={process.env.PUBLIC_URL + '/CAROUSELARROWLEFT.SVG'} alt="previous image" />
+                <img
+                    src={process.env.PUBLIC_URL + "/CAROUSELARROWLEFT.SVG"}
+                    alt="previous image"
+                />
             </button>
             {images.map((image, index) => (
                 <img
                     key={index}
                     src={image}
                     alt="Carousel Slide"
-                    className={`carousel-image ${index === currentIndex ? 'active' : ''}`}
+                    className={`carousel-image ${index === currentIndex ? "active" : ""}`}
                 />
             ))}
             <button className="right-carousel-btn" onClick={goToNextSlide}>
-                <img src={process.env.PUBLIC_URL + '/CAROUSELARROWRIGHT.svg'} alt="next image" />
+                <img
+                    src={process.env.PUBLIC_URL + "/CAROUSELARROWRIGHT.svg"}
+                    alt="next image"
+                />
             </button>
+            <div className="indicator">{indicatorText}</div>
         </div>
     );
 };

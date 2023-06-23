@@ -5,7 +5,7 @@ import ArticleContainer from "../../components/articleContainer";
 
 export default function Home() {
     const [articles, setArticles] = useState([]);
-    const description = "Chez vous, partout et ailleur";
+    const description = "Chez vous, partout et ailleurs";
 
     useEffect(() => {
         fetch(process.env.PUBLIC_URL + "/proprioData.json")

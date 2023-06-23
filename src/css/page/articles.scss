@@ -16,6 +16,10 @@
       align-items: center;
       overflow: hidden;
 
+      .indicator {
+        display: none;
+      }
+
       button {
         background: none;
         border: none;
@@ -69,17 +73,17 @@
   .info {
 
     h1 {
-      font-size: 24px;
-      font-weight: 500;
-      color: #FF6060;
+      font-size: $article-title-text-size;
+      font-weight: $articles-title-text-weight;
+      color: $articles-title-text-color;
       margin: 0 0 10px 0;
     }
 
     h2 {
       margin: 0 0 10px 0;
-      font-size: 18px;
-      font-weight: 500;
-      color: #FF6060;
+      font-size: $location-text-size;
+      font-weight: $location-text-weight;
+      color: $location-text-color;
     }
 
     .tags {
@@ -101,9 +105,9 @@
         align-items: center;
 
         h3 {
-          color: white;
-          font-size: 12px;
-          font-weight: 400;
+          color: $tag-text-color;
+          font-size: $tag-text-size;
+          font-weight: $tag-text-weight;
         }
       }
     }
@@ -138,9 +142,9 @@
       h3 {
         margin: 0 12px 0 0;
         padding: 0;
-        font-weight: 500;
-        font-size: 12px;
-        color: #FF6060;
+        font-weight: $username-text-weight;
+        font-size: $username-text-size;
+        color: $username-text-color;
       }
 
       img {

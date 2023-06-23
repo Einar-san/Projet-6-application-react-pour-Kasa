@@ -4,7 +4,8 @@ footer {
   width: 100%;
   height: 210px;
   background-color: black;
-  color: white;
+
+
   .footer-content {
     width: 100%;
     height: 100%;
@@ -21,8 +22,9 @@ footer {
     p {
       width: 35%;
       text-align: center;
-      font-size: 12px;
-      font-weight: 500;
+      font-size: $footer-text-size;
+      font-weight: $footer-text-weight;
+      color: $footer-text-color;
 
     }
   }

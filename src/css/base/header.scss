@@ -17,9 +17,9 @@
     justify-content: space-between;
   }
   a {
-    font-weight: 500;
-    color: #FF6060;
-    font-size: 12px;
+    font-weight: $nav-text-weight;
+    color: $nav-text-color;
+    font-size: $nav-text-size;
     text-decoration: none;
     text-transform: uppercase;
   }
