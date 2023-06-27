@@ -32,14 +32,19 @@ const Carousel = ({ images }) => {
 
     const indicatorText = `${currentIndex + 1}/${images.length}`;
 
+    const shouldShowNavigation = images.length > 1; // Check if there is more than one image
+    const shouldShowIndicator = images.length > 1; // Check if there is more than one image
+
     return (
         <div className="carousel">
-            <button className="left-carousel-btn" onClick={goToPreviousSlide}>
-                <img
-                    src={process.env.PUBLIC_URL + "/CAROUSELARROWLEFT.SVG"}
-                    alt="previous image"
-                />
-            </button>
+            {shouldShowNavigation && (
+                <button className="left-carousel-btn" onClick={goToPreviousSlide}>
+                    <img
+                        src={process.env.PUBLIC_URL + "/CAROUSELARROWLEFT.SVG"}
+                        alt="previous image"
+                    />
+                </button>
+            )}
             {images.map((image, index) => (
                 <img
                     key={index}
@@ -48,13 +53,15 @@ const Carousel = ({ images }) => {
                     className={`carousel-image ${index === currentIndex ? "active" : ""}`}
                 />
             ))}
-            <button className="right-carousel-btn" onClick={goToNextSlide}>
-                <img
-                    src={process.env.PUBLIC_URL + "/CAROUSELARROWRIGHT.svg"}
-                    alt="next image"
-                />
-            </button>
-            <div className="indicator">{indicatorText}</div>
+            {shouldShowNavigation && (
+                <button className="right-carousel-btn" onClick={goToNextSlide}>
+                    <img
+                        src={process.env.PUBLIC_URL + "/CAROUSELARROWRIGHT.svg"}
+                        alt="next image"
+                    />
+                </button>
+            )}
+            {shouldShowIndicator && <div className="indicator">{indicatorText}</div>}
         </div>
     );
 };
