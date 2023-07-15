@@ -8,27 +8,32 @@ import Description from "../../components/article/description";
 import Conveniences from "../../components/article/convenience";
 
 export default function Article() {
-    const { id } = useParams();
-    const navigate = useNavigate();
-    const [articles, setArticles] = useState([]);
-    const [isDataFetched, setIsDataFetched] = useState(false);
+    const { id } = useParams();// Extracts the "id" parameter from the URL
+    const navigate = useNavigate();// Retrieves the navigation function from the router
+    const [articles, setArticles] = useState([]);// State variable to store the articles
+    const [isDataFetched, setIsDataFetched] = useState(false);// State variable to track if data has been fetched
 
     useEffect(() => {
         const fetchData = async () => {
             try {
+                // Fetches the data from a JSON file
                 const response = await fetch(process.env.PUBLIC_URL + "/proprioData.json");
                 const data = await response.json();
+
+                // Updates the articles state with the fetched data
                 setArticles(Array.isArray(data) ? data : []);
+
+                // Marks the data as fetched
                 setIsDataFetched(true);
             } catch (error) {
                 console.error(error);
             }
         };
 
-        fetchData();
+        fetchData();// Fetches the data when the component mounts
     }, []);
 
-    const article = articles.find((article) => article.id === id);
+    const article = articles.find((article) => article.id === id);// Finds the article with the specified ID
 
     useEffect(() => {
         if (isDataFetched && !article) {

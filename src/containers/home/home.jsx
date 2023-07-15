@@ -1,4 +1,4 @@
-// Make sur to do the export early, else it will cause an error
+
 import React, { useEffect, useState } from "react";
 import Banner from "../../components/banner";
 import ArticleContainer from "../../components/articleContainer";

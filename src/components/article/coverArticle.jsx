@@ -8,6 +8,7 @@ export default function CoverArticle({ article }) {
     );
 }
 
+// Carousel element
 const Carousel = ({ images }) => {
     const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -32,8 +33,8 @@ const Carousel = ({ images }) => {
 
     const indicatorText = `${currentIndex + 1}/${images.length}`;
 
-    const shouldShowNavigation = images.length > 1; // Check if there is more than one image
-    const shouldShowIndicator = images.length > 1; // Check if there is more than one image
+    const shouldShowNavigation = images.length > 1; // Check if there is more than one image, for hiding navigation
+
 
     return (
         <div className="carousel">
@@ -61,7 +62,7 @@ const Carousel = ({ images }) => {
                     />
                 </button>
             )}
-            {shouldShowIndicator && <div className="indicator">{indicatorText}</div>}
+            {shouldShowNavigation && <div className="indicator">{indicatorText}</div>}
         </div>
     );
 };
