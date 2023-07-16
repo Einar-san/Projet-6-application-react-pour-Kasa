@@ -225,6 +225,7 @@ footer .footer-content p {
 }
 .article-container .cover-article .carousel .indicator {
   display: none;
+  z-index: 1;
 }
 .article-container .cover-article .carousel button {
   background: none;

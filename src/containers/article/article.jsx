@@ -1,11 +1,9 @@
 import { useParams, useNavigate } from 'react-router-dom';
 import React, { useEffect, useState } from "react";
-
-import CoverArticle from "../../components/article/coverArticle";
 import FilterTag from "../../components/article/filterTag";
 import UserScore from "../../components/article/userScore";
-import Description from "../../components/article/description";
-import Conveniences from "../../components/article/convenience";
+import Accordion from "../../components/accordion";
+import Carousel from "../../components/article/carousel";
 
 export default function Article() {
     const { id } = useParams();// Extracts the "id" parameter from the URL
@@ -48,14 +46,14 @@ export default function Article() {
 
     return (
         <div className="article-container">
-            <CoverArticle article={article} />
+            <Carousel images={article.pictures} />
             <div className="filter-score">
                 <FilterTag article={article} />
                 <UserScore article={article} />
             </div>
             <div className="precisions">
-                <Description article={article} />
-                <Conveniences article={article} />
+                <Accordion title={"Description"} content={article.description} classElement={"description"}/>
+                <Accordion title={"Equipements"} content={article.equipments} classElement={"description"} />
             </div>
         </div>
     );
