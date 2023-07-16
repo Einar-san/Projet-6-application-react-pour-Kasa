@@ -15,7 +15,6 @@ export default function UserScore ({article}) {
     }
     // Stars elements
     const ratingStars = generateRatingStars(article.rating);
-    const userName = article.host.name
     const spaceIndex = article.host.name.indexOf(' ');
     const firstPart = article.host.name.slice(0, spaceIndex);
     const secondPart = article.host.name.slice(spaceIndex + 1);

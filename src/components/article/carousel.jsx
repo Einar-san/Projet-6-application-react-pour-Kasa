@@ -1,32 +1,28 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useCallback } from "react";
 
 export default function Carousel({ images }) {
-
     const [currentIndex, setCurrentIndex] = useState(0);
 
-    const goToPreviousSlide = () => {
+    const goToPreviousSlide = useCallback(() => {
         setCurrentIndex((prevIndex) => {
-            const newIndex = prevIndex === 0 ? images.length - 1 : prevIndex - 1;
-            return newIndex;
+            return prevIndex === 0 ? images.length - 1 : prevIndex - 1;
         });
-    };
+    }, [images]);
 
-    const goToNextSlide = () => {
+    const goToNextSlide = useCallback(() => {
         setCurrentIndex((prevIndex) => {
-            const newIndex = prevIndex === images.length - 1 ? 0 : prevIndex + 1;
-            return newIndex;
+            return prevIndex === images.length - 1 ? 0 : prevIndex + 1;
         });
-    };
+    }, [images]);
 
     useEffect(() => {
-        const imageTimer = setTimeout(goToNextSlide, 5000); // Automatically go to the next slide every 5 seconds
+        const imageTimer = setTimeout(goToNextSlide, 5000);
         return () => clearTimeout(imageTimer);
-    }, [currentIndex]);
+    }, [currentIndex, goToNextSlide]);
 
     const indicatorText = `${currentIndex + 1}/${images.length}`;
 
-    const shouldShowNavigation = images.length > 1; // Check if there is more than one image, for hiding navigation
-
+    const shouldShowNavigation = images.length > 1;
 
     return (
         <div className={"cover-article"}>
@@ -36,13 +32,13 @@ export default function Carousel({ images }) {
                         <button className="left-carousel-btn" onClick={goToPreviousSlide}>
                             <img
                                 src={process.env.PUBLIC_URL + "/CAROUSELARROWLEFT.SVG"}
-                                alt="previous image"
+                                alt="previous"
                             />
                         </button>
                         <button className="right-carousel-btn" onClick={goToNextSlide}>
                             <img
                                 src={process.env.PUBLIC_URL + "/CAROUSELARROWRIGHT.svg"}
-                                alt="next image"
+                                alt="next"
                             />
                         </button>
                         <div className="indicator">{indicatorText}</div>
@@ -59,4 +55,4 @@ export default function Carousel({ images }) {
             </div>
         </div>
     );
-};
+}
